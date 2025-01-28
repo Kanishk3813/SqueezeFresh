@@ -35,7 +35,7 @@ const CartPage = ({ cart, updateQuantity, removeFromCart }: CartPageProps) => {
               
               <div className="ml-6 flex-1">
                 <h3 className="text-lg font-semibold text-gray-800">{item.name}</h3>
-                <p className="text-gray-600 mt-1">${item.price}</p>
+                <p className="text-gray-600 mt-1">&#8377;{item.price}</p>
               </div>
               
               <div className="flex items-center space-x-4">
@@ -70,7 +70,7 @@ const CartPage = ({ cart, updateQuantity, removeFromCart }: CartPageProps) => {
             <div className="flex justify-between items-center">
               <span className="text-xl font-semibold">Total:</span>
               <span className="text-2xl font-bold text-orange-500">
-                ${total.toFixed(2)}
+              &#8377;{total.toFixed(2)}
               </span>
             </div>
           </div>

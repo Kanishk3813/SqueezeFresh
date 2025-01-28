@@ -123,15 +123,15 @@ const CartModal = ({ isOpen, onClose, cart, updateQuantity, removeFromCart }: Ca
               <div className="space-y-2">
                 <div className="flex justify-between text-sm text-gray-600">
                   <span>Subtotal</span>
-                  <span>${subtotal.toFixed(2)}</span>
+                  <span>&#8377;{subtotal.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-sm text-gray-600">
                   <span>Tax (10%)</span>
-                  <span>${tax.toFixed(2)}</span>
+                  <span>&#8377;{tax.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between font-semibold text-lg text-gray-900">
                   <span>Total</span>
-                  <span>${total.toFixed(2)}</span>
+                  <span>&#8377;{total.toFixed(2)}</span>
                 </div>
               </div>
               
