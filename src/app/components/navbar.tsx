@@ -9,35 +9,45 @@ interface NavbarProps {
 
 const Navbar = ({ onCartClick, cartItemsCount }: NavbarProps) => {
   return (
-    <nav className="bg-white shadow-md fixed w-full top-0 z-40">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold text-orange-500">JuiceBar</span>
-          </Link>
-          
-          <div className="flex items-center space-x-4">
-            <Link href="/" className="text-gray-600 hover:text-orange-500">
-              Home
+    <div className="fixed w-full top-4 z-40 flex justify-center">
+      <nav className="w-3/4 rounded-2xl bg-white/25 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] backdrop-blur-[4px] border border-white/20">
+        <div className="px-6">
+          <div className="flex justify-between items-center h-16">
+            <Link href="/" className="flex items-center">
+              <span className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-950 bg-clip-text text-transparent">
+                JuiceBar
+              </span>
             </Link>
-            <Link href="/menu" className="text-gray-600 hover:text-orange-500">
-              Menu
-            </Link>
-            <button 
-              onClick={onCartClick}
-              className="relative text-gray-600 hover:text-orange-500 p-2"
-            >
-              <ShoppingCart className="w-6 h-6" />
-              {cartItemsCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-orange-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
-                  {cartItemsCount}
-                </span>
-              )}
-            </button>
+            
+            <div className="flex items-center space-x-8">
+              <Link 
+                href="/" 
+                className="text-gray-950 hover:text-orange-500 transition-colors duration-200 font-medium"
+              >
+                Home
+              </Link>
+              <Link 
+                href="/menu" 
+                className="text-gray-950 hover:text-orange-500 transition-colors duration-200 font-medium"
+              >
+                Menu
+              </Link>
+              <button 
+                onClick={onCartClick}
+                className="relative text-gray-950 hover:text-orange-500 p-2 transition-colors duration-200"
+              >
+                <ShoppingCart className="w-6 h-6" />
+                {cartItemsCount > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-gradient-to-r from-orange-500 to-orange-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center shadow-lg">
+                    {cartItemsCount}
+                  </span>
+                )}
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 };
 

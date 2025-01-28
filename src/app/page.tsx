@@ -5,11 +5,12 @@ import ProductCard from '../app/components/product';
 import { Juice, CartItem } from '../app/types/types';
 import Navbar from '../app/components/navbar';
 import CartModal from '../app/components/cartmodal';
+import Footer from '../app/components/Footer';
 
 const BackgroundPattern = () => (
   <div className="absolute inset-0 overflow-hidden -z-10">
-    <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-orange-100" />
-    <div className="absolute inset-0 opacity-[0.15] bg-[radial-gradient(circle_at_1px_1px,#fb923c_1px,transparent_0)] bg-[size:40px_40px]" />
+    {/* Simple gradient background that complements hero colors */}
+    <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-orange-50 to-pink-50" />
   </div>
 );
 
@@ -128,7 +129,7 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Fresh Ingredients</h3>
+                <h3 className="text-lg font-semibold mb-2 text-black">Fresh Ingredients</h3>
                 <p className="text-gray-600">Sourced daily from local farms</p>
               </div>
               
@@ -138,7 +139,7 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold mb-2">100% Natural</h3>
+                <h3 className="text-lg font-semibold mb-2 text-black">100% Natural</h3>
                 <p className="text-gray-600">No artificial additives</p>
               </div>
               
@@ -148,7 +149,7 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Free Delivery</h3>
+                <h3 className="text-lg font-semibold mb-2 text-black">Free Delivery</h3>
                 <p className="text-gray-600">On all orders</p>
               </div>
             </div>
@@ -163,6 +164,7 @@ export default function Home() {
         updateQuantity={updateQuantity}
         removeFromCart={removeFromCart}
       />
+      <Footer />
     </div>
   );
 }
