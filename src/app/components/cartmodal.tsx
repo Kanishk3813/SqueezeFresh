@@ -1,4 +1,3 @@
-// components/CartModal.tsx
 import { useState, useEffect } from 'react';
 import { X, Minus, Plus, Trash2, ShoppingBag } from 'lucide-react';
 import Image from 'next/image';
@@ -24,7 +23,7 @@ const CartModal = ({ isOpen, onClose, cart, updateQuantity, removeFromCart }: Ca
   if (!isOpen && !isAnimating) return null;
 
   const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const tax = subtotal * 0.1; // 10% tax
+  const tax = subtotal * 0.1; 
   const total = subtotal + tax;
 
   const handleTransitionEnd = () => {
@@ -85,7 +84,7 @@ const CartModal = ({ isOpen, onClose, cart, updateQuantity, removeFromCart }: Ca
                     
                     <div className="ml-4 flex-1">
                       <h3 className="font-medium text-gray-900">{item.name}</h3>
-                      <p className="text-sm text-gray-500">${item.price}</p>
+                      <p className="text-sm text-gray-500">&#8377;{item.price}</p>
                       
                       <div className="flex items-center mt-2">
                         <button
