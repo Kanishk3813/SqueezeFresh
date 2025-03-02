@@ -50,7 +50,6 @@ const Hero = () => {
               </button>
             </div>
 
-            {/* Animated stats */}
             <div className="mt-16 grid grid-cols-2 md:grid-cols-3 gap-8 max-w-3xl mx-auto animate-fadeIn" style={{ animationDelay: '0.6s' }}>
               <div className="text-center p-4 rounded-xl backdrop-blur-sm bg-white/5 hover:bg-white/10 transition-colors duration-300">
                 <div className="text-3xl font-bold text-white animate-count">5000+</div>

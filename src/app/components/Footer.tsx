@@ -18,7 +18,6 @@ const Footer = () => {
                 Fresh, healthy, and delicious juices made with the finest ingredients.
               </p>
             </div>
-
             <div>
               <h3 className="font-semibold text-gray-800 mb-4">Quick Links</h3>
               <ul className="space-y-2">
