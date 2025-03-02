@@ -13,10 +13,10 @@ phases:
   post_build:
     commands:
       - echo "Build completed on `date`"
-      - amplify configure --app-id d3cbd7vrlkxvqm -y
-      - amplify publish -y
-      # Or alternatively if you only want to trigger the deployment:
-      # - aws amplify start-job --app-id d3cbd7vrlkxvqm --branch-name main --job-type RELEASE
+      # Pull the existing Amplify project first
+      - amplify pull --appId d3cbd7vrlkxvqm --envName prod --yes
+      # Then trigger the deployment
+      - aws amplify start-job --app-id d3cbd7vrlkxvqm --branch-name main --job-type RELEASE
 
 artifacts:
   files:
