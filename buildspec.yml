@@ -5,14 +5,27 @@ phases:
     runtime-versions:
       nodejs: latest
     commands:
+      - echo "Current directory: $(pwd)"
+      - ls -la
+      - cat package.json
       - npm install
   build:
     commands:
+      - echo "Starting build process"
       - npm run build
   post_build:
     commands:
       - echo "Build completed on `date`"
-      - aws amplify start-job --app-id d3cbd7vrlkxvqm --branch-name main --job-type RELEASE
+      - |
+        # Check for running jobs before starting a new one
+        JOBS=$(aws amplify list-jobs --app-id d3cbd7vrlkxvqm --branch-name main --query "jobSummaries[?status=='PENDING' || status=='RUNNING'].jobId" --output text)
+        if [ -z "$JOBS" ]; then
+          echo "No jobs running, starting new Amplify job"
+          aws amplify start-job --app-id d3cbd7vrlkxvqm --branch-name main --job-type RELEASE
+        else
+          echo "Skipping Amplify job start - jobs already running or pending for branch main"
+        fi
+
 artifacts:
   files:
     - '**/*'
