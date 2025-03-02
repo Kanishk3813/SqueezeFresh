@@ -12,7 +12,7 @@ phases:
   post_build:
     commands:
       - echo "Build completed on `date`"
-      - aws amplify start-job d3cbd7vrlkxvqm --branch-name main --job-type RELEASE
+      - aws amplify start-job --app-id d3cbd7vrlkxvqm --branch-name main --job-type RELEASE
 artifacts:
   files:
     - '**/*'
