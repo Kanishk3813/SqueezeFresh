@@ -5,7 +5,7 @@ import { Plus, Heart, Star } from 'lucide-react';
 import { Juice } from '../types/types';
 
 interface ProductCardProps {
-    juice: Juice;  // Use the imported Juice type
+    juice: Juice; 
     addToCart: (juice: Juice) => void;
   }
 

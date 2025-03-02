@@ -7,9 +7,7 @@ const Footer = () => {
     <footer className="w-full mt-20 pb-4">
       <div className="w-3/4 mx-auto rounded-2xl bg-white/25 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] backdrop-blur-[4px] border border-white/20 overflow-hidden">
         <div className="w-full p-8">
-          {/* Main Footer Content */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {/* Brand Section */}
             <div className="space-y-4">
               <Link href="/" className="flex items-center">
                 <span className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
@@ -21,7 +19,6 @@ const Footer = () => {
               </p>
             </div>
 
-            {/* Quick Links */}
             <div>
               <h3 className="font-semibold text-gray-800 mb-4">Quick Links</h3>
               <ul className="space-y-2">
@@ -48,7 +45,6 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Contact Info */}
             <div>
               <h3 className="font-semibold text-gray-800 mb-4">Contact Us</h3>
               <ul className="space-y-2">
@@ -67,7 +63,6 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Social Media Links */}
             <div>
               <h3 className="font-semibold text-gray-800 mb-4">Follow Us</h3>
               <div className="flex space-x-4">
@@ -84,10 +79,8 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Divider */}
           <div className="border-t border-gray-200 my-8" />
 
-          {/* Bottom Section */}
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-600 text-sm">
               © {new Date().getFullYear()} SqueezeFresh. All rights reserved.
