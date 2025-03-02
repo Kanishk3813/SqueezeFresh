@@ -12,9 +12,6 @@ phases:
   post_build:
     commands:
       - echo "Build completed on `date`"
-      # Use the AWS CLI directly to trigger a deployment
-      - aws amplify start-job --app-id d3cbd7vrlkxvqm --branch-name main --job-type RELEASE
-
 artifacts:
   files:
     - '**/*'
