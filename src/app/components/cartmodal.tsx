@@ -59,7 +59,6 @@ const CartModal = ({ isOpen, onClose, cart, updateQuantity, removeFromCart }: Ca
             </button>
           </div>
 
-          {/* Cart Items */}
           <div className="flex-1 overflow-y-auto p-4">
             {cart.length === 0 ? (
               <div className="flex flex-col items-center justify-center h-full text-gray-500">
@@ -116,7 +115,6 @@ const CartModal = ({ isOpen, onClose, cart, updateQuantity, removeFromCart }: Ca
             )}
           </div>
 
-          {/* Summary */}
           {cart.length > 0 && (
             <div className="border-t p-4 space-y-4">
               <div className="space-y-2">
