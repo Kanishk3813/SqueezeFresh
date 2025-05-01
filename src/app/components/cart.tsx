@@ -15,14 +15,6 @@ const CartPage = ({ cart, updateQuantity, removeFromCart }: CartPageProps) => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
       <h1 className="text-3xl font-bold text-gray-900 mb-8">Your Cart</h1>
-
-      {/* <h1 className="text-3xl font-bold text-gray-900 mb-8">Your Cart</h1> */}
-
-      {/* {cart.length === 0 ? (
-        <div className="text-center py-16">
-          <p className="text-gray-500 text-lg">Your cart is empty</p>
-        </div>
-      ) : ( */}
       
       {cart.length === 0 ? (
         <div className="text-center py-16">
