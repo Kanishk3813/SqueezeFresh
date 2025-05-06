@@ -1,24 +1,38 @@
 pipeline {
   agent any
 
+  environment {
+    IMAGE_NAME = 'squeezefresh-app'
+    CONTAINER_NAME = 'squeezefresh'
+  }
+
   stages {
     stage('Clone Repository') {
       steps {
-        git 'https://github.com/Kanishk3813/SqueezeFresh.git'
+        echo '🔄 Cloning the repository...'
+        git branch: 'main', url: 'https://github.com/Kanishk3813/SqueezeFresh.git'
       }
     }
 
     stage('Build Docker Image') {
       steps {
-        sh 'docker build -t squeezefresh-app .'
+        echo '🐳 Building Docker image...'
+        sh 'docker build -t $IMAGE_NAME .'
       }
     }
 
-    stage('Run Container') {
+    stage('Run Docker Container') {
       steps {
+        echo '🚀 Running Docker container...'
         sh '''
-          docker rm -f squeezefresh || true
-          docker run -d -p 3000:3000 --name squeezefresh squeezefresh-app
+          if docker ps -a --format '{{.Names}}' | grep -Eq "^$CONTAINER_NAME\$"; then
+            echo "Stopping and removing existing container..."
+            docker stop $CONTAINER_NAME
+            docker rm $CONTAINER_NAME
+          fi
+
+          echo "Starting new container..."
+          docker run -d -p 3000:3000 --name $CONTAINER_NAME $IMAGE_NAME
         '''
       }
     }
